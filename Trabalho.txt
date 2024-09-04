@@ -1,0 +1,106 @@
+#include <stdio.h>
+
+int main() {
+    int idade;
+    int opcao, quantidade, i;
+    float valor_total = 0.0;
+    const float preco_ingresso = 30.50;
+
+    // Solicita a idade do usuário
+    printf("Insira a sua idade:\n");
+    scanf("%d", &idade);
+
+    printf("Idade informada: %d\n", idade);
+
+    // Exibe as opções de filmes
+    printf("Escolha um filme:\n");
+    printf("1: E assim que acaba\n");
+    printf("2: Deadpool e Wolverine\n");
+    printf("3: Divertidamente 2\n");
+    printf("4: Armadilha\n");
+    printf("Digite o numero correspondente ao filme: ");
+    scanf("%d", &opcao);
+
+    // Verifica se a opção é válida
+    if (opcao < 1 || opcao > 4) {
+        printf("Opcao invalida! Encerrando o programa.\n");
+        return 1;
+    }
+
+    // Solicita a quantidade de ingressos
+    printf("Digite a quantidade de ingressos: ");
+    scanf("%d", &quantidade);
+
+    // Calcula o valor total com base nas idades
+    for (i = 0; i < quantidade; i++) {
+        printf("Digite a idade do espectador %d: ", i + 1);
+        scanf("%d", &idade);
+
+        if (idade < 10 || idade > 65) {
+            valor_total += preco_ingresso / 2;  // Meia entrada
+        } else {
+            valor_total += preco_ingresso;  // Entrada inteira
+        }
+    }
+
+    // Exibe o valor total
+    printf("Valor total: R$ %.2f\n", valor_total);
+
+    return 0;
+}
+
+
+
+
+#include <stdio.h>
+
+int main() { 
+    int opcao, quantidade, idade;
+    float valor_total = 0.0;
+    const float preco_ingresso = 30.50;
+
+    // Exibe as opções de filmes
+    printf("Escolha um filme:\n");
+    printf("1: E assim que acaba\n");
+    printf("2: Deadpool e Wolverine\n");
+    printf("3: Divertidamente 2\n");
+    printf("4: Armadilha\n");
+    printf("Digite o numero correspondente ao filme: ");
+    scanf("%d", &opcao);
+
+    // Verifica se a opção é válida
+    if (opcao < 1 || opcao > 4) {
+        printf("Opcao invalida! Encerrando o programa.\n");
+        return 1;
+    }
+
+    // Mensagem de confirmação sobre a escolha do filme
+    printf("Você escolheu o filme número %d.\n", opcao);
+
+    // Solicita a quantidade de ingressos
+    printf("Digite a quantidade de ingressos: ");
+    scanf("%d", &quantidade);
+
+    // Verifica se a quantidade de ingressos é válida
+    if (quantidade <= 0) {
+        printf("Quantidade inválida! Encerrando o programa.\n");
+        return 1;
+    }
+
+    // Calcula o valor total com base nas idades dos espectadores
+    for (int i = 0; i < quantidade; i++) {
+        printf("Digite a idade do espectador %d: ", i + 1);
+        scanf("%d", &idade);
+
+        if (idade < 10 || idade > 65) {
+            valor_total += preco_ingresso / 2;  // Meia entrada
+        } else {
+            valor_total += preco_ingresso;  // Entrada inteira
+        }
+    }
+
+    // Exibe o valor total
+    printf("Valor total dos ingressos: R$ %.2f\n", valor_total);
+
+    return 0;
+}
